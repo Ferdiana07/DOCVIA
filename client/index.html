@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f2ea" />
+    <meta name="description" content="Find verified doctors, compare schedules, and manage healthcare appointments with DOCVIA." />
+    <meta property="og:title" content="DOCVIA | Doctor appointments made clear" />
+    <meta property="og:description" content="Search verified doctors and manage appointment requests in one place." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/hero-image.jpg" />
+    <title>DOCVIA | Doctor appointments made clear</title>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem('docvia-theme');
+        const theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#09120f' : '#f5f2ea';
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
