@@ -32,3 +32,8 @@ Thumbs.db
 
 # Coverage
 coverage/
+
+.agents/
+design-system/
+docs/
+deploy/
